@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------
 // Projeto para conectar ao banco de dados MYSQL e escrever na tabela os   |
-// valores lidos de um cartão RFID    Data: 15/06/2018                     |
+// valores lidos de um cartão RFID    Data: 15/04/2018                     |
 // VERSÃO - 3                                                              |
 //--------------------------------------------------------------------------
 
