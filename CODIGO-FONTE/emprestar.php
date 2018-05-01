@@ -13,26 +13,26 @@ $MATRICULA;
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?= header('content-type: text/html; charset = utf-8');?> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+   <?= header('content-type: text/html; charset = utf-8');?> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
 
+    <title>SISTEMEQ</title>
 
-<title>SISTEMEQ</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/sb-admin.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="../css/sb-admin.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<!-- Custom Fonts -->
-<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -56,7 +56,7 @@ $MATRICULA;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">SISTEMEQ<img src="../img/una-logo.jpg"></a>
+                <a class="navbar-brand" href="index.php">SISTEMEQ</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -81,14 +81,12 @@ $MATRICULA;
                     <li>
                         <a href="devolver.php"><i class="fa fa-fw fa-archive"></i> Devolução</a>
                     </li>
-                    <li>
-                        <a href="Equipamentos.php"><i class="fa fa-fw fa-hdd-o"></i> Equipamentos</a>
-                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
 
+        <div id="deu">(:</div>
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -138,11 +136,11 @@ $MATRICULA;
                                     ?>">
                                 </div>
                                 <div class="col-md-6">
-                                    <h1>Histórico de Empréstimos</h1>
-                                    <div class="dados ">
-                                        
-                                    </div>
+                                <h1>Histórico de Empréstimos</h1>
+                                <div class="dados ">
+                                    
                                 </div>
+                            </div>
                             </fieldset>
 
                         </form>
@@ -175,7 +173,7 @@ $MATRICULA;
                                         <label>Tag</label>
 
                                         <select id="Tag" class="form-control" required>
-                                            
+
                                         </select>
                                     </div>
                                 </div>                            
@@ -207,47 +205,47 @@ $MATRICULA;
 
                     </div>
                     
-                    <!-- /.row -->
-
-                </div>
-                <!-- /.container-fluid -->
+                <!-- /.row -->
 
             </div>
-            <!-- /#page-wrapper -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- /#wrapper -->
+        <!-- /#page-wrapper -->
 
-        <!-- jQuery -->
-        <script src="../js/jquery.js"></script>
-        <!-- <script src="../js/validar_equipamento.js"></script> -->
-        <!-- Bootstrap Core JavaScript -->
-        <script rel="stylesheet" >
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <!-- <script src="../js/validar_equipamento.js"></script> -->
+    <!-- Bootstrap Core JavaScript -->
+    <script rel="stylesheet" >
             var matricula   = $("#matricula").val();
             var pagina_de_consulta = '../php/consultar_professor.php';
 
-            $(document).ready(function()
-             { /*quando carregar a página */
+       $(document).ready(function()
+       { /*quando carregar a página */
 
-                mostrar_historico();
-
-
+mostrar_historico();
 
 
-                /*seleção de tipos*/
-                $("#tipo_equipamento").change(function(){
-                    var clickedOption = $(this).val();
+
+
+        /*seleção de tipos*/
+        $("#tipo_equipamento").change(function(){
+            var clickedOption = $(this).val();
                 // alert(clickedOption);
                 jquery2php(clickedOption);
             });
 
 
-                /*ao clicar em salvar */
+        /*ao clicar em salvar */
 
-                $('#salvar').click(function(){
-                    event.preventDefault();
+        $('#salvar').click(function(){
+            event.preventDefault();
 
-                    if($('#tipo_equipamento').val()!='' && $('#Sala').val() != ''){
+            if($('#tipo_equipamento').val()!='' && $('#Sala').val() != ''){
             // var nome        = $('#Nome').val();
             var tipo        = $('#tipo_equipamento').val();
             
@@ -287,54 +285,54 @@ $MATRICULA;
         }
 
 
+        });
     });
-            });
-            function mostrar_historico(){
-                $.ajax 
-                ({
-                    type      : 'POST', 
-                    dataType  : 'html', 
-                    url       : pagina_de_consulta, 
-                    beforeSend: function(){
-                        $(".dados").html("carregando...");
-                    },
-                    data      : {matricula: matricula},
-                    success: function (output) {
-                        $(".dados").html(output);
-                    },
-                    error: function(xhr) {
-                        alert("erro");
+function mostrar_historico(){
+        $.ajax 
+            ({
+                type      : 'POST', 
+                dataType  : 'html', 
+                url       : pagina_de_consulta, 
+                beforeSend: function(){
+                    $(".dados").html("carregando...");
+                },
+                data      : {matricula: matricula},
+                success: function (output) {
+                    $(".dados").html(output);
+                },
+                error: function(xhr) {
+                    alert("erro");
 
-                    }
-                });
+                }
+            });
+
+}
+       function jquery2php(c)
+       {
+        var page = "../php/teste.php";
+        $.ajax 
+        ({
+            type      : 'POST', 
+            dataType  : 'html', 
+            url       : page, 
+            beforeSend: function(){
+                $("#Tag").html("carregando...");
+            },
+            data      : {palavra: c },
+            success: function (output) {
+                $("#Tag").html(output);
+            },
+            error: function(xhr) {
+                alert("erro");
 
             }
-            function jquery2php(c)
-            {
-                var page = "../php/teste.php";
-                $.ajax 
-                ({
-                    type      : 'POST', 
-                    dataType  : 'html', 
-                    url       : page, 
-                    beforeSend: function(){
-                        $("#Tag").html("carregando...");
-                    },
-                    data      : {palavra: c },
-                    success: function (output) {
-                        $("#Tag").html(output);
-                    },
-                    error: function(xhr) {
-                        alert("erro");
+        }); 
+    }  
 
-                    }
-                }); 
-            }  
+</script>
+<script src="../js/bootstrap.min.js"></script>
 
-        </script>
-        <script src="../js/bootstrap.min.js"></script>
+</body>
 
-    </body>
-
-    <head>
-        </html>
+<head>
+</html>
