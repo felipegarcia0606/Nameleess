@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">SISTEMEQ<img src="../img/una-logo.jpg"></a>
+                    <a class="navbar-brand" href="index.php">SISTEMEQ</a>
                 </div>
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
@@ -73,9 +73,6 @@
                         </li>
                         <li>
                             <a href="devolver.php"><i class="fa fa-fw fa-archive"></i> Devolução</a>
-                        </li>
-                        <li>
-                            <a href="Equipamentos.php"><i class="fa fa-fw fa-hdd-o"></i> Equipamentos</a>
                         </li>
                     </ul>
                 </div>
@@ -118,7 +115,9 @@
                                                     <th>Equipamento</th>
                                                     <th>Situação</th>
                                                     <th>Disponível</th>
-                                                    <th>Data Empréstimo</th>
+                                                    <th>
+                                                    Data Empréstimo   
+                                                    /<th></th></th>
                                                     <th>Data Devolução</th>
                                                     <th>Ultimo Professor</th>
                                                     <th>Sala</th>                                                    
