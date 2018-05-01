@@ -51,3 +51,56 @@
                 </body>
 
                 </html>
+            
+            
+            <?php 
+require_once('conecta_bd.php');
+
+$objBd = new bd();
+$objBd->conecta_mysqli();
+
+$query = "SELECT * from Equipamento";
+
+
+    $result = mysqli_query($query);
+    while($fetch = mysqli_fetch_row($result)){
+        echo "<p>". $fetch[0] . "-" . $fetch[1] . "-" . $fetch[2]. "-" . $fetch[3] . "</p>";
+    }
+
+
+	
+
+// if($retorno)
+// {
+
+	// $equip = mysqli_fetch_array($retorno);
+	
+
+
+// 	if(isset($equip['tag']))
+// 	{
+// 		echo '<pre>';
+// 		var_dump($equip);
+
+// 		echo '</pre>';
+// 		echo $nome = $equip[1];
+// 		echo $id = $equip['id'];
+		
+// 	}
+// 	else
+// 	{
+// 		echo $nome = 'sem equipamento';
+		
+// 	}
+
+// }
+// else
+// {
+// 	echo $erro = "erro na execução da consulta, entre em contato com o admin do site";
+// }
+
+
+
+
+
+?>
